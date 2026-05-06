@@ -14,6 +14,8 @@ PluginComponent {
     property string ispName: ""
     property string countryCode: ""
     property string countryName: ""
+    property string regionName: ""
+    property string cityName: ""
     property string statusMessage: "..."
     property bool privacyMode: (pluginData.privacyDefault || false)
     property bool autoRefresh: (pluginData.autoRefresh ?? true)
@@ -49,6 +51,8 @@ PluginComponent {
                     ispName = data.isp || data.org || ""
                     countryCode = (data.countryCode || "").toLowerCase()
                     countryName = data.country || ""
+                    regionName = data.regionName || data.region || ""
+                    cityName = data.city || ""
                     statusMessage = "OK"
                 } catch(e) {
                     statusMessage = "Error"
@@ -194,13 +198,13 @@ PluginComponent {
                         spacing: Theme.spacingS
 
                         StyledText {
-                            text: "Country"
+                            text: "Location"
                             font.pixelSize: Theme.fontSizeSmall
                             color: Theme.surfaceVariantText
                         }
 
                         StyledText {
-                            text: privacyMode ? "----" : (countryName || "N/A")
+                            text: privacyMode ? "----" : (cityName || regionName || countryName || "N/A")
                             font.pixelSize: Theme.fontSizeMedium
                             color: Theme.surfaceText
                         }
