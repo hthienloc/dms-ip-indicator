@@ -210,7 +210,7 @@ PluginComponent {
                         }
 
                         StyledText {
-                            text: privacyMode ? "----" : (cityName || regionName || countryName || "N/A")
+                            text: privacyMode ? "----" : (countryName ? countryName + (cityName || regionName ? " - " + (cityName || regionName) : "") : "N/A")
                             font.pixelSize: Theme.fontSizeMedium
                             color: Theme.surfaceText
                         }
