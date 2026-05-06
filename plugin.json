@@ -1,7 +1,7 @@
 {
     "id": "ipIndicator",
     "name": "IP Indicator",
-    "description": "Shows country code and public IP. Displays IP, ISP and country in tooltip. Right-click to toggle privacy mode.",
+    "description": "Displays IP, ISP and country information of the current network connection",
     "version": "1.0.0",
     "license": "GPL-3.0",
     "author": "Loc Huynh",
