@@ -20,6 +20,9 @@ PluginComponent {
     property bool privacyMode: (pluginData.privacyDefault || false)
     property bool autoRefresh: (pluginData.autoRefresh ?? true)
     readonly property bool showHint: (pluginData.showHint ?? true)
+    readonly property bool showIP: (pluginData.showIP ?? true)
+    readonly property bool showISP: (pluginData.showISP ?? true)
+    readonly property bool showLocation: (pluginData.showLocation ?? true)
 
     Component.onCompleted: {
         if (autoRefresh) {
@@ -164,6 +167,7 @@ PluginComponent {
 
                     Column {
                         spacing: Theme.spacingS
+                        visible: root.showIP
 
                         StyledText {
                             text: "IP"
@@ -180,6 +184,7 @@ PluginComponent {
 
                     Column {
                         spacing: Theme.spacingS
+                        visible: root.showISP
 
                         StyledText {
                             text: "ISP"
@@ -196,6 +201,7 @@ PluginComponent {
 
                     Column {
                         spacing: Theme.spacingS
+                        visible: root.showLocation
 
                         StyledText {
                             text: "Location"

@@ -37,6 +37,24 @@ PluginSettings {
             }
 
             ToggleSetting {
+                settingKey: "showIP"
+                label: "Show IP Address"
+                defaultValue: true
+            }
+
+            ToggleSetting {
+                settingKey: "showISP"
+                label: "Show ISP"
+                defaultValue: true
+            }
+
+            ToggleSetting {
+                settingKey: "showLocation"
+                label: "Show Location"
+                defaultValue: true
+            }
+
+            ToggleSetting {
                 settingKey: "privacyDefault"
                 label: "Privacy Mode by Default"
                 description: "Start with IP hidden. Right-click to toggle."
