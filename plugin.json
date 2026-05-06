@@ -1,0 +1,17 @@
+{
+    "id": "ip-indicator",
+    "name": "IP Indicator",
+    "description": "Shows country code and public IP. Displays IP, ISP and country in tooltip. Right-click to toggle privacy mode.",
+    "version": "1.0.0",
+    "license": "GPL-3.0",
+    "author": "Loc Huynh",
+    "icon": "public",
+    "type": "widget",
+    "capabilities": ["dankbar-widget"],
+    "component": "./IPIndicatorWidget.qml",
+    "settings": "./IPIndicatorSettings.qml",
+    "permissions": [
+        "settings_read",
+        "settings_write"
+    ]
+}
