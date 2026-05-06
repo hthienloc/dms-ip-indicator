@@ -19,8 +19,6 @@ PluginComponent {
     property bool autoRefresh: (pluginData.autoRefresh ?? true)
     readonly property bool showHint: (pluginData.showHint ?? true)
 
-    readonly property string ispNickname: pluginData.ispNickname || ""
-
     Component.onCompleted: {
         if (autoRefresh) {
             statusMessage = "Loading..."
@@ -65,7 +63,6 @@ PluginComponent {
     }
 
     function getDisplayText() {
-        if (root.ispNickname) return root.ispNickname
         if (privacyMode) return "Hidden"
         if (root.publicIP) {
             if (countryCode) {

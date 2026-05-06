@@ -14,7 +14,6 @@ A DankShell widget that displays your public IP address, ISP, and country inform
 
 ## Settings
 
-- **ISP Nickname** - Custom nickname to display instead of ISP name
 - **Privacy Mode by Default** - Start with IP hidden
 - **Auto Refresh on Start** - Fetch IP when plugin loads
 - **Show Hint** - Display hint about right-click functionality

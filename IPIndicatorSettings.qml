@@ -36,14 +36,6 @@ PluginSettings {
                 color: Theme.surfaceText
             }
 
-            StringSetting {
-                settingKey: "ispNickname"
-                label: "ISP Nickname"
-                description: "Custom nickname to display instead of ISP name."
-                placeholder: "e.g., My VPN"
-                defaultValue: ""
-            }
-
             ToggleSetting {
                 settingKey: "privacyDefault"
                 label: "Privacy Mode by Default"
