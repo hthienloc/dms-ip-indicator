@@ -2,6 +2,8 @@
 
 A DankShell widget that displays your public IP address, ISP, and country information.
 
+![Screenshot](screenshot.png)
+
 ## Features
 
 - Shows public IP address with country code (e.g., VN 171.225.184.94)
