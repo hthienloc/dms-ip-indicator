@@ -7,7 +7,7 @@ import qs.Modules.Plugins
 
 PluginSettings {
     id: root
-    pluginId: "ip-indicator"
+    pluginId: "ipIndicator"
 
     StyledText {
         width: parent.width
