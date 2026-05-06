@@ -138,7 +138,7 @@ PluginComponent {
                 width: parent.width
                 headerText: "IP Indicator"
                 detailsText: privacyMode ? "Hidden" : root.statusMessage
-                showCloseButton: true
+                showCloseButton: false
 
                 Column {
                     width: parent.width
