@@ -2,7 +2,7 @@
 
 A DankShell widget that displays your public IP address, ISP, and country information.
 
-![Screenshot](screenshot.png)
+<img src="screenshot.png" width="300" alt="Screenshot">
 
 ## Features
 
