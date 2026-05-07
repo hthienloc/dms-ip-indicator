@@ -23,7 +23,7 @@ PluginComponent {
     readonly property bool showIP: (pluginData.showIP ?? true)
     readonly property bool showISP: (pluginData.showISP ?? true)
     readonly property bool showLocation: (pluginData.showLocation ?? true)
-    readonly property string displayMode: (pluginData.displayMode || "country") // country, ip, icon
+    readonly property string displayMode: (pluginData.displayMode || "country") // country, country_ip, ip, icon
 
     Component.onCompleted: {
         if (autoRefresh) {
@@ -76,6 +76,9 @@ PluginComponent {
         if (root.publicIP) {
             if (root.displayMode === "ip") {
                 return root.publicIP
+            }
+            if (root.displayMode === "country_ip") {
+                return countryCode ? countryCode.toUpperCase() + " " + root.publicIP : root.publicIP
             }
             if (countryCode) {
                 return countryCode.toUpperCase()
@@ -147,39 +150,11 @@ PluginComponent {
                 detailsText: privacyMode ? "Hidden" : root.statusMessage
                 showCloseButton: false
 
-                Column {
+Column {
                     width: parent.width
                     spacing: Theme.spacingM
 
                     Row {
-                        spacing: Theme.spacingS
-                        anchors.horizontalCenter: parent.horizontalCenter
-
-                        DankButton {
-                            text: "Country"
-                            backgroundColor: root.displayMode === "country" ? Theme.primary : Theme.surfaceContainer
-                            textColor: root.displayMode === "country" ? Theme.onPrimary : Theme.surfaceText
-                            onClicked: root.displayMode = "country"
-                        }
-
-                        DankButton {
-                            text: "IP"
-                            backgroundColor: root.displayMode === "ip" ? Theme.primary : Theme.surfaceContainer
-                            textColor: root.displayMode === "ip" ? Theme.onPrimary : Theme.surfaceText
-                            onClicked: root.displayMode = "ip"
-                        }
-
-                        DankButton {
-                            text: "Icon"
-                            backgroundColor: root.displayMode === "icon" ? Theme.primary : Theme.surfaceContainer
-                            textColor: root.displayMode === "icon" ? Theme.onPrimary : Theme.surfaceText
-onClicked: root.displayMode = "icon"
-                        }
-                    }
-
-                    Row {
-                        spacing: Theme.spacingS
-                        anchors.horizontalCenter: parent.horizontalCenter
                         spacing: Theme.spacingS
                         anchors.horizontalCenter: parent.horizontalCenter
 

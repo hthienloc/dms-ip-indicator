@@ -19,18 +19,52 @@ PluginSettings {
 
     StyledRect {
         width: parent.width
-        height: displayColumn.implicitHeight + Theme.spacingL * 2
+        height: barColumn.implicitHeight + Theme.spacingL * 2
         radius: Theme.cornerRadius
         color: Theme.surfaceContainerHigh
 
         Column {
-            id: displayColumn
+            id: barColumn
             anchors.fill: parent
             anchors.margins: Theme.spacingL
             spacing: Theme.spacingM
 
             StyledText {
-                text: "Display"
+                text: "Bar Display"
+                font.pixelSize: Theme.fontSizeMedium
+                font.weight: Font.Medium
+                color: Theme.surfaceText
+            }
+
+            SelectionSetting {
+                settingKey: "displayMode"
+                label: "Display"
+                description: "What to show on the bar."
+                options: [
+                    { label: "Country", value: "country" },
+                    { label: "Country + IP", value: "country_ip" },
+                    { label: "IP Address", value: "ip" },
+                    { label: "Icon Only", value: "icon" }
+                ]
+                defaultValue: "country"
+            }
+        }
+    }
+
+    StyledRect {
+        width: parent.width
+        height: popoutColumn.implicitHeight + Theme.spacingL * 2
+        radius: Theme.cornerRadius
+        color: Theme.surfaceContainerHigh
+
+        Column {
+            id: popoutColumn
+            anchors.fill: parent
+            anchors.margins: Theme.spacingL
+            spacing: Theme.spacingM
+
+            StyledText {
+                text: "Popout"
                 font.pixelSize: Theme.fontSizeMedium
                 font.weight: Font.Medium
                 color: Theme.surfaceText
@@ -38,7 +72,7 @@ PluginSettings {
 
             ToggleSetting {
                 settingKey: "showIP"
-                label: "Show IP Address"
+                label: "Show IP"
                 defaultValue: true
             }
 
@@ -52,13 +86,6 @@ PluginSettings {
                 settingKey: "showLocation"
                 label: "Show Location"
                 defaultValue: true
-            }
-
-            ToggleSetting {
-                settingKey: "privacyDefault"
-                label: "Privacy Mode by Default"
-                description: "Start with IP hidden. Right-click to toggle."
-                defaultValue: false
             }
         }
     }
@@ -83,16 +110,23 @@ PluginSettings {
             }
 
             ToggleSetting {
+                settingKey: "privacyDefault"
+                label: "Privacy Mode by Default"
+                description: "Start with IP hidden."
+                defaultValue: false
+            }
+
+            ToggleSetting {
                 settingKey: "autoRefresh"
                 label: "Auto Refresh on Start"
-                description: "Fetch IP information when plugin loads."
+                description: "Fetch IP when plugin loads."
                 defaultValue: true
             }
 
             ToggleSetting {
                 settingKey: "showHint"
                 label: "Show Hint"
-                description: "Display hint about right-click functionality."
+                description: "Display right-click hint."
                 defaultValue: true
             }
         }
