@@ -1,34 +1,35 @@
 # IP Indicator
 
-A DankShell widget that displays your public IP address, ISP, and country information.
+Display your public IP, ISP, and location.
 
 <img src="screenshot.png" width="300" alt="Screenshot">
 
+## Install
+
+[<kbd>Install Now</kbd>](dms://plugin/install/ip-indicator)
+
+Or manually:
+```bash
+git clone https://github.com/hthienloc/dms-ipIndicator ~/.config/DankMaterialShell/plugins/ipIndicator
+```
+
 ## Features
 
-- Shows public IP address with country code (e.g., VN 171.225.184.94)
-- Displays ISP and country information in popout menu
-- Right-click to toggle privacy mode (hide IP)
-- Auto-refresh on startup
-- Customizable with settings
-
-## Settings
-
-- **Privacy Mode by Default** - Start with IP hidden
-- **Auto Refresh on Start** - Fetch IP when plugin loads
-- **Show Hint** - Display hint about right-click functionality
+- **IP info at a glance** - Country flag, IP address, ISP
+- **Privacy mode** - Right-click to hide/show IP
+- **Auto-refresh** - Fetch on startup
 
 ## Usage
 
-- **Left-click**: Open popout with IP details
-- **Right-click**: Toggle privacy mode (hide/show IP)
-- **Refresh button**: Manually fetch new IP information
+| Action | Result |
+|--------|--------|
+| Left click | Open details popout |
+| Right click | Toggle privacy mode |
 
-## Dependencies
+## Requirements
 
-- curl (for fetching IP data)
-- ip-api.com (IP information service)
+- `curl` - HTTP requests to ip-api.com
 
 ## License
 
-GPL-3.0 - See LICENSE file for details.
+GPL-3.0
