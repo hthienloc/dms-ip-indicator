@@ -6,7 +6,7 @@ Display your public IP, ISP, and location.
 
 ## Install
 
-[**Install Now**](dms://plugin/install/ip-indicator)
+[Install Now](dms://plugin/install/ip-indicator)
 
 Or manually:
 ```bash
