@@ -7,7 +7,7 @@ Display your public IP, ISP, and location.
 ## Install
 
 ```
-dms://plugin/install/ip-indicator
+dms://plugin/install/ipIndicator
 ```
 
 Or manually:
