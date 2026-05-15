@@ -23,8 +23,12 @@ PluginSettings {
             description: "What to show on the bar."
             options: [
                 { label: "Country", value: "country" },
-                { label: "Country + IP", value: "country_ip" },
+                { label: "City", value: "city" },
+                { label: "ISP", value: "isp" },
                 { label: "IP Address", value: "ip" },
+                { label: "Country + IP", value: "country_ip" },
+                { label: "Country + City", value: "country_city" },
+                { label: "City + IP", value: "city_ip" },
                 { label: "Icon Only", value: "icon" }
             ]
             defaultValue: "country"

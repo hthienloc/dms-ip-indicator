@@ -75,16 +75,17 @@ PluginComponent {
         if (root.displayMode === "icon") return ""
         if (privacyMode) return "Hidden"
         if (root.publicIP) {
-            if (root.displayMode === "ip") {
-                return root.publicIP
+            switch (root.displayMode) {
+                case "ip": return root.publicIP;
+                case "country_ip": return (countryCode ? countryCode.toUpperCase() + " " : "") + root.publicIP;
+                case "city": return cityName || countryCode.toUpperCase();
+                case "isp": return ispName || "N/A";
+                case "country_city": return (countryCode ? countryCode.toUpperCase() : "") + (cityName ? " - " + cityName : "");
+                case "city_ip": return (cityName ? cityName + " " : "") + root.publicIP;
+                case "country":
+                default:
+                    return countryCode ? countryCode.toUpperCase() : root.publicIP;
             }
-            if (root.displayMode === "country_ip") {
-                return countryCode ? countryCode.toUpperCase() + " " + root.publicIP : root.publicIP
-            }
-            if (countryCode) {
-                return countryCode.toUpperCase()
-            }
-            return root.publicIP
         }
         return root.statusMessage
     }
