@@ -247,5 +247,12 @@ Column {
     }
 
     popoutWidth: 260
-    popoutHeight: 360
+    popoutHeight: {
+        let h = 140; // Header + Buttons
+        if (root.showIP) h += 50;
+        if (root.showISP) h += 50;
+        if (root.showLocation) h += 50;
+        if (root.showHints) h += 60;
+        return h;
+    }
 }
