@@ -124,9 +124,9 @@ PluginSettings {
             }
 
             ToggleSetting {
-                settingKey: "showHint"
-                label: "Show Hint"
-                description: "Display right-click hint."
+                settingKey: "showHints"
+                label: "Show Hints"
+                description: "Display helpful usage tips in the plugin popout."
                 defaultValue: true
             }
         }

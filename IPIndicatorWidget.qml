@@ -6,6 +6,7 @@ import qs.Common
 import qs.Services
 import qs.Widgets
 import qs.Modules.Plugins
+import "./components"
 
 PluginComponent {
     id: root
@@ -19,7 +20,7 @@ PluginComponent {
     property string statusMessage: "..."
     property bool privacyMode: (pluginData.privacyDefault || false)
     property bool autoRefresh: (pluginData.autoRefresh ?? true)
-    readonly property bool showHint: (pluginData.showHint ?? true)
+    readonly property bool showHints: (pluginData.showHints ?? true)
     readonly property bool showIP: (pluginData.showIP ?? true)
     readonly property bool showISP: (pluginData.showISP ?? true)
     readonly property bool showLocation: (pluginData.showLocation ?? true)
@@ -226,22 +227,17 @@ Column {
                         }
                     }
 
-                    Column {
-                        spacing: Theme.spacingXS
-                        visible: root.showHint
+                    HintSection {
+                        showHints: root.showHints
+                        width: parent.width
 
-                        StyledText {
-                            text: "Hint: Right-click icon"
-                            font.pixelSize: Theme.fontSizeSmall
-                            color: Theme.surfaceVariantText
-                            horizontalAlignment: Text.AlignHCenter
+                        HintItem {
+                            icon: "mouse"
+                            text: "Right-click the bar icon to quickly toggle Privacy Mode"
                         }
-
-                        StyledText {
-                            text: "to hide/show IP"
-                            font.pixelSize: Theme.fontSizeSmall
-                            color: Theme.surfaceVariantText
-                            horizontalAlignment: Text.AlignHCenter
+                        HintItem {
+                            icon: "refresh"
+                            text: "Click Refresh if your IP address or connection changes"
                         }
                     }
                 }
