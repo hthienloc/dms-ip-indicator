@@ -44,7 +44,9 @@ git clone https://github.com/hthienloc/dms-ipIndicator ~/.config/DankMaterialShe
 GPL-3.0
 
 ## Roadmap / TODO
-- [ ] **VPN Status Detection**: Indicate whether a VPN is active by checking for common VPN interfaces (tun0, wg0) or known VPN IP ranges.
-- [ ] **Network Latency Tool**: Add a real-time ping indicator to monitor connection stability to reliable servers (e.g., 1.1.1.1).
-- [ ] **IP History Log**: Implement a local history log to track when and how your public IP or ISP has changed over time.
-- [ ] **Multi-Provider Fallback**: Add support for multiple IP-API providers to ensure reliability if one service is down.
+
+- [ ] **Smart VPN Detection**: Automatically detect active VPN/Proxy connections by monitoring network interfaces (e.g., `tun0`, `wg0`) and display a status badge.
+- [ ] **Latency Monitor**: Integrated ping tool to measure real-time latency to common DNS servers (e.g., 8.8.8.8, 1.1.1.1).
+- [ ] **Local IP Details**: Add a section in the popout for local network information (Local IP, Gateway, Interface name).
+- [ ] **Service Redundancy**: Implement failover support for multiple IP geolocation providers (e.g., ipinfo.io, ifconfig.me) to improve reliability.
+- [ ] **IP Change Notifications**: Optional desktop notifications when your public IP address or ISP changes.
